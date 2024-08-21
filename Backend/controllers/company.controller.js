@@ -56,7 +56,7 @@ export const getCompanyById = async(req,res)=>{
         if (!company){
             return res.status(404).json({
                 message:"Company Not Found",
-                success:false
+                success:false            
             })
           };
 
@@ -65,7 +65,7 @@ export const getCompanyById = async(req,res)=>{
             success:true
           })
     } catch (error) {
-        console.log("Error")
+        console.log(error.message)
     }
 }
 
