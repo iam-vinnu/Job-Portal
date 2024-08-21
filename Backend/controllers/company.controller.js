@@ -17,8 +17,7 @@ export const registerCompany = async(req,res)=>{
         };
         company = await Company.create({
             name:companyName,
-            userId:req.id
-
+            userId:req.id 
         });
          
         return res.status(201).json({
@@ -27,7 +26,7 @@ export const registerCompany = async(req,res)=>{
             success:true
         })
     } catch (error) {
-        console.log("error in register");
+        console.log(error.message);
     }
 }
 

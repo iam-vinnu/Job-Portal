@@ -13,13 +13,13 @@ const companySchema = new mongoose.Schema({
      website:{
         type:String
         
-     },
-     location:{
+     },   
+     location:{    
         type:String
         
      },
      logo:{
-        type:String //url 
+        type:String 
          
      },
      userId:{
@@ -29,4 +29,4 @@ const companySchema = new mongoose.Schema({
      },
 },{timestamps:true});
 
-export const Company = mongoose.model('Company',companySchema);
+export const Company = mongoose.model('Company', companySchema);
