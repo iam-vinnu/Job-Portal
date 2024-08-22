@@ -32,8 +32,8 @@ const jobSchema = new mongoose.Schema({
         required:true
     },
     company:{
-        type:mongoose.Schema.Types.ObjectId ,
-        ref:'company'
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Company'
     },
     created_by:{
         type:mongoose.Schema.Types.ObjectId,
