@@ -1,6 +1,6 @@
 
 import './App.css'
-import Navbar from './components/ui/shared/Navbar'
+import Navbar from './components/shared/Navbar'
 
 function App() {
  
