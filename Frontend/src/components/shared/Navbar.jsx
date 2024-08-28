@@ -23,8 +23,9 @@ const Navbar = () => {
                     {
                         (!user) ? 
                         <div className='flex gap-2'>
-                            <Button variant="outline">Login</Button>
-                            <Button className="bg-[#2e52e6] hover:bg-[#1f3cb0]">Signup</Button>
+                            <Link to='/login'><Button variant="outline">Login</Button></Link>
+                            <Link to='/signup'><Button className="bg-[#2e52e6] hover:bg-[#1f3cb0]">Signup</Button></Link>
+                            
                         </div> : 
                         <Popover>
                             <PopoverTrigger asChild>
