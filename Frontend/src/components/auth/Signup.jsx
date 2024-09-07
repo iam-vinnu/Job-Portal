@@ -62,7 +62,7 @@ export const Signup = () => {
             </div>
           </div>
           <Button type='submit' className='bg-[#2e52e6] hover:bg-[#1f3cb0] w-full mb-3'>Signup</Button>
-          <span className=''>Already have an account? <Link to='/login'>Login</Link></span>
+          <span className='text-sm'>Already have an account? <Link to='/login' className='text-blue-600'>Login</Link></span>
         </form>
       </div>
     </div>
