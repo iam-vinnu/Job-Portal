@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { Avatar, AvatarImage } from '../ui/avatar'
 import { Button } from '../ui/button'
 import { LogOut, User2 } from 'lucide-react'
-
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
     const user = false;
@@ -12,7 +12,7 @@ const Navbar = () => {
         <div className='bg-white'>
             <div className='flex items-center justify-between mx-auto max-w-6xl h-16'>
                 <div>
-                    <h1 className='text-2xl font-bold'>You<span className='text-[#f83002]'>Hired</span></h1>
+                    <h1 className='text-2xl font-bold '>You<span className='text-[#f83002]'>Hired</span></h1>
                 </div>
                 <div className='hidden md:flex items-center gap-12'>
                     <ul className='flex font-medium items-center gap-5'>
@@ -62,7 +62,8 @@ const Navbar = () => {
                     }
 
                 </div>
-
+                
+                
             </div>
 
         </div>
