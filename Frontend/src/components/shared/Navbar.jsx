@@ -1,25 +1,26 @@
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Avatar, AvatarImage } from '../ui/avatar'
 import { Button } from '../ui/button'
 import { LogOut, User2 } from 'lucide-react'
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
+    const navigate = useNavigate();
     const user = false;
     return (
-        <div className='bg-white'>
-            <div className='flex items-center justify-between mx-auto max-w-6xl h-16'>
+        <div className='bg-white '>
+            <div className='flex items-center justify-between h-16 px-8'>
                 <div>
-                    <h1 className='text-2xl font-bold '>You<span className='text-[#f83002]'>Hired</span></h1>
+                    <Link to='/'><h1 className='text-2xl font-bold ' >You<span className='text-[#f83002]'>Hired</span></h1></Link>
                 </div>
-                <div className='hidden md:flex items-center gap-12'>
+                <div className='flex items-center gap-12'>
                     <ul className='flex font-medium items-center gap-5'>
-                        <li>Home</li>
+                       <Link to='/'> <li>Home</li></Link>
                         <li>Jobs</li>
                         <li>Browse</li>
-                    </ul>
+                    </ul>   
                     {
                         (!user) ? 
                         <div className='flex gap-2'>

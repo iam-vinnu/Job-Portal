@@ -6,6 +6,8 @@ export const register = async(req,res)=>{
         const {fullname,email,phoneNumber,password,role} = req.body;
 
         if(!fullname || !email || !phoneNumber || !password || !role){
+          
+            
             return res.status(400).json({
                 messsage:"Something is missing",
                 success:false
@@ -67,7 +69,7 @@ export const login = async(req,res)=>{
                 success:false,
                 
             })
-        };
+        };   
         const tokenData = {
             userId:user._id
         }
@@ -75,7 +77,7 @@ export const login = async(req,res)=>{
 
         user ={
             _id:user._id,
-             fullname:user.fullname,
+             fullname:user.fullname,     
              email:user.email,
              phoneNumber:user.phoneNumber,
              role:user.role,
