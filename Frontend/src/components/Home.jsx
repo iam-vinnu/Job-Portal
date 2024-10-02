@@ -12,6 +12,7 @@ function Home() {
         <HeroSection/>
         <CategoryCarousal/>
         <LatestJobs/>
+        <Footer/>
     </div>
   )
 }
