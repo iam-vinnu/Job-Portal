@@ -3,6 +3,7 @@ import Navbar from './shared/Navbar'
 import FilterCard from './FilterCard'
 import Job from './job'
 import { SpaceIcon } from 'lucide-react'
+import Footer from './shared/Footer'
 
 const jobsArray = [1, 2, 3, 4, 5, 6, 7, 8]
 
@@ -31,7 +32,7 @@ function Jobs() {
           }
         </div>
       </div>
-
+     <Footer/>
     </div>
   )
 }
