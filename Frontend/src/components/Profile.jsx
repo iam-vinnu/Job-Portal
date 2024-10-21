@@ -2,13 +2,23 @@ import React from 'react'
 import Navbar from './shared/Navbar'
 import { Avatar, AvatarImage } from './ui/avatar'
 import { Button } from './ui/button'
-import { Pen } from 'lucide-react'
+import { Contact, Mail, Pen } from 'lucide-react'
+import { Badge } from './ui/badge'
+import { Label } from './ui/label'
+import AppiledJobTable from './AppiledJobTable'
+import { Input } from './ui/input'
+
+
+
+const skills = ['HTML' , 'CSS' , 'JS' , 'REACTjs']
 
 function Profile() {
+
+    const isResume = true ;
     return (
         <div>
             <Navbar />
-            <div className='max-w-5xl mx-auto bg-white border border-gray-200 rounded-2xl my-2 p-4'>
+            <div className='max-w-4xl mx-auto bg-white border border-gray-200 rounded-2xl my-2 p-4'>
                 <div className='flex justify-between'>
                     <div className='flex items-center gap-4'>
                         <Avatar className='h-16 w-16' >
@@ -19,8 +29,46 @@ function Profile() {
                             <p className='text-gray-500'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat explicabo obcaecati rem consequatur quos!</p>
                         </div>
                     </div>
-                    <Button className='text-right' variant='outline'><Pen className='h-4 w-4'/></Button>
+                    <Button className='text-right' variant='outline'><Pen className='h-4 w-4' /></Button>
                 </div>
+
+                <div className='my-4'>
+                    <div className='flex items-center gap-3' >
+                        <Mail />
+                        <span>binaybehera101@gmail.com</span>
+                    </div>
+                    <div className='flex items-center gap-3'>
+                        <Contact />
+                        <span>9843638235</span>
+                    </div>
+                </div>
+
+                <div className='my-4'>
+                    <h1>Skills</h1>
+                    {
+                       skills.length !== 0 ? skills.map((item , index) => <Badge className='mr-2' key={index}>{item}</Badge>) : <span>NA</span>
+                    }
+                </div>
+                
+                <div className='grid w-full max-w-sm items-center gap-1.5'>
+                    <Label className='text-md font-bold' >Resume</Label>
+                    {
+                        isResume 
+                        ? <a target='blank' href='https://' className='text-blue-500 w-full hover:underline cursor-pointer'>Binay Behera</a> 
+                        : <span>NA</span>
+                    }
+                     <Input
+                accept='image/*'
+                type='file'
+                name='file'
+               // onChange={changeFileHandler}
+                className='cursor-pointer'
+              />
+                </div>
+            </div>
+            <div className='max-w-4xl mx-auto bg-white rounded-2xl'>
+                 <h1 className='font-bold text-lg my-3'>Applied Jobs</h1>
+                 <AppiledJobTable/>
             </div>
         </div>
     )
