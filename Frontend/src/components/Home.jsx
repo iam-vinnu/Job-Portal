@@ -4,8 +4,10 @@ import Footer from './shared/footer'
 import HeroSection from './HeroSection'
 import CategoryCarousal from './CategoryCarousal'
 import LatestJobs from './LatestJobs'
+import useGetAllJobs from '@/hooks/useGetAllJobs'
 
 function Home() {
+  useGetAllJobs();
   return (
     <div>
         <Navbar/>

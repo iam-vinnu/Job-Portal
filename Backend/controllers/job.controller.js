@@ -20,7 +20,7 @@ export const postJob = async(req,res)=>{
             experienceLevel : experience ,
             position ,
             company:companyId,
-            created_by:userId
+            created_by:userId,
         });
        await job.save();      
         return res.status(201).json({
