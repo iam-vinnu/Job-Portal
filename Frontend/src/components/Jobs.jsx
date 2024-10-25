@@ -27,7 +27,7 @@ function Jobs() {
                 <div className='grid grid-cols-3 gap-5'>
                   {allJobs?.map((job) => (
                     <div key={job?._id}>
-                      <Job  job={job} />
+                      <Job job={job} />
                     </div>
                   ))}
                 </div>

@@ -30,12 +30,12 @@ function FilterCard() {
        <RadioGroup>
         {
           fillterData.map((item,index)=>(
-            <div>
+            <div key={index}>
               <h1 className='font-bold text-lg'>{item.fillerType}</h1>
               {
                 item.array.map((arrayItem , index)=>{
                   return (
-                    <div className='flex items-center space-x-2 my-2'>
+                    <div className='flex items-center space-x-2 my-2' key={index}>
                       <RadioGroupItem value={arrayItem}/>
                       <Label>{arrayItem}</Label>
                     </div>
