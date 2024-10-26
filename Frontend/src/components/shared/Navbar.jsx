@@ -40,7 +40,7 @@ const Navbar = () => {
                         {
                             user && user?.role === 'recruiter' ? (
                                 <>
-                                    <Link to='/admin/company'> <li>Companies</li></Link>
+                                    <Link to='/admin/companies'> <li>Companies</li></Link>
                                     <Link to='/admin/jobs'> <li>Jobs</li></Link>
                                 </>
                             ) : (
@@ -79,10 +79,15 @@ const Navbar = () => {
                                         </div>
                                     </div>
                                     <div className='flex flex-col text-gray-600'>
-                                        <div className='flex w-fit items-center gap-2 cursor-pointer'>
-                                            <User2 />
-                                            <Button variant="link"><Link to="/profile">View Profile</Link></Button>
-                                        </div >
+
+                                        {
+                                            user && user?.role === 'student' && (
+                                                <div className='flex w-fit items-center gap-2 cursor-pointer'>
+                                                    <User2 />
+                                                    <Button variant="link"><Link to="/profile">View Profile</Link></Button>
+                                                </div >
+                                            )
+                                        }
                                         <div className='flex w-fit items-center gap-2 cursor-pointer'>
                                             <LogOut />
                                             <Button onClick={handleLogout} variant="link">Logout</Button>
