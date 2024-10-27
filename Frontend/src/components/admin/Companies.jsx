@@ -2,8 +2,10 @@ import React from 'react'
 
 function Companies() {
   return (
-    <div>Companies</div>
+    <div>
+      
+    </div>
   )
 }
 
-export default Companies
+export default Companies 
