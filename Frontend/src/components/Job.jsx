@@ -19,7 +19,7 @@ function Job({job}) {
       <div className='flex items-center justify-between'>
       <p className='text-sm text-gray-500'>{daysAgoPost(job?.createdAt) === 0 
                                                ? <span>Posted Few Hours Ago</span>
-                                               : `${daysAgoPost(job?.createdAt)}Days Ago` }</p>
+                                               : `${daysAgoPost(job?.createdAt)} Days Ago` }</p>
       <Button variant='outline' className='rounded-full' size='icon'><Bookmark /></Button>
       </div>
       <div className='flex items-center gap-2 my-2'>
