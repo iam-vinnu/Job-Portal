@@ -1,7 +1,7 @@
 import express from "express";
 import isAunthenticated from "../middlewares/isAuthenticated.js";
 import { getCompany, getCompanyById, registerCompany, updateCompany } from "../controllers/company.controller.js";
-const router = express.Router();
+const router = express.Router(); 
 
 router.route("/register").post(isAunthenticated,registerCompany);
 router.route("/get").get(isAunthenticated,getCompany);
