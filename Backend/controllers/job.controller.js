@@ -2,9 +2,9 @@ import { Job } from "../models/job.model.js";
 
 export const postJob = async(req,res)=>{
     try {
-        const {title , description , requirments , salary , location , jobType , experience ,position, companyId} = req.body ;
+        const {title , description , requirements , salary , location , jobType , experience ,position, companyId} = req.body ;
         const userId = req.id;
-        if(!title || !description || !requirments || !salary || !location || !jobType || !experience  || !position  || !companyId){
+        if(!title || !description || !requirements || !salary || !location || !jobType || !experience  || !position  || !companyId){
             return res.status(400).json({
                 message:"Something is Missing",
                 success:false
@@ -13,7 +13,7 @@ export const postJob = async(req,res)=>{
         const job = await Job.create({
             title,
             description,
-            requirements : requirments.split(","),
+            requirements : requirements.split(","),
             salary:Number(salary) ,
             location ,
             jobType ,
