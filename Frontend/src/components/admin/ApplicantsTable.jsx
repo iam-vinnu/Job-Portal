@@ -3,11 +3,26 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '.
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
 import { Check, Cross, MoreHorizontal } from 'lucide-react'
 import { useSelector } from 'react-redux';
+import { toast } from 'sonner';
+import axios from 'axios';
+import { APPLICATION_API_END_POINT } from '@/utils/constant';
 
 
 const sortListArray = ['Accepted', 'Rejected'];
 const ApplicantsTable = () => {
     const { applicants } = useSelector(store => store.application);
+    const handleStatus = async(status , id)=>{
+        try {
+            const res = await axios.post(`${APPLICATION_API_END_POINT}/status/${id}/update`,{status},{withCredentials:true});
+            console.log(res);
+            
+            if(res.data.success){
+                toast.success(res.data.message);
+            }
+        } catch (error) {
+            toast.error(error.response.data.message);
+        }
+    } 
     return (
         <div>
             <Table>
@@ -40,7 +55,7 @@ const ApplicantsTable = () => {
                                             {
                                                 sortListArray.map((status, index) => {
                                                     return (
-                                                        <div key={index} className='flex items-center gap-3'>
+                                                        <div onClick={()=>handleStatus(status ,item._id)} key={index} className='flex items-center gap-3 cursor-pointer'>
                                                             {status}
                                                         </div>
                                                     )
