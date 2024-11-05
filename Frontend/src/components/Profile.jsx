@@ -19,8 +19,7 @@ function Profile() {
     useGetAppliedJob();
     const [open , setOpen] = useState(false);
     const {user} = useSelector(store => store.auth);
-    const {allAppliedJob} = useSelector(store => store.job);
-    console.log(allAppliedJob);
+   
     
    // const isResume = true ;
     return (

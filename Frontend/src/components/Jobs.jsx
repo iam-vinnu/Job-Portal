@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './shared/Navbar'
 import FilterCard from './FilterCard'
 import Job from './job'
@@ -11,7 +11,23 @@ import useGetAllJobs from '@/hooks/useGetAllJobs'
 
 function Jobs() {
   useGetAllJobs();
-  const {allJobs} = useSelector(store => store.job);
+  const {allJobs , searchedQuery} = useSelector(store => store.job);
+  const [filterJob , setFilterJob] = useState(allJobs);
+  useEffect(()=>{
+     if(searchedQuery){
+         const filteredJob = allJobs.filter((job)=>{
+             return job.title.toLowerCase().includes(searchedQuery.toLowerCase()) ||
+             job.description.toLowerCase().includes(searchedQuery.toLowerCase()) ||
+             job.location.toLowerCase().includes(searchedQuery.toLowerCase()) 
+         });
+         setFilterJob(filteredJob);
+     }else{
+      setFilterJob(allJobs);
+     }
+  },[allJobs, searchedQuery]);
+  console.log(filterJob);
+  console.log(allJobs);
+  
   return (
     <div>
       <Navbar />
@@ -22,10 +38,10 @@ function Jobs() {
             <FilterCard />
           </div>
           {
-           allJobs.length <= 0 ? <span>No Job Found</span> : (
+           filterJob.length <= 0 ? <span>No Job Found</span> : (
               <div className='flex-1 h-[88vh] overflow-y-auto pb-5'>
                 <div className='grid grid-cols-3 gap-5'>
-                  {allJobs?.map((job) => (
+                  {filterJob?.map((job) => (
                     <div key={job?._id}>
                       <Job job={job} />
                     </div>
