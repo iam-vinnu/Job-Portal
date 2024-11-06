@@ -5,7 +5,7 @@ import Job from './Job'
 
 import { useSelector } from 'react-redux'
 import useGetAllJobs from '@/hooks/useGetAllJobs'
-import Footer from './shared/Footer'
+
 
 //const jobsArray = [1, 2, 3, 4, 5, 6, 7, 8]
 
@@ -51,7 +51,7 @@ function Jobs() {
           }
         </div>
       </div>
- <Footer/>
+ 
     </div>
   )
 }
