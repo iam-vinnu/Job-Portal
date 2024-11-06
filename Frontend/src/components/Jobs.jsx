@@ -25,8 +25,7 @@ function Jobs() {
       setFilterJob(allJobs);
      }
   },[allJobs, searchedQuery]);
-  console.log(filterJob);
-  console.log(allJobs);
+ 
   
   return (
     <div>

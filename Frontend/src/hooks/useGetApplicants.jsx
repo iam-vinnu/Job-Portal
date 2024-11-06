@@ -10,7 +10,7 @@ const useGetApplicants = (jobId) => {
         const fetchApplicants = async () =>{
             try {
                 const res = await axios.get(`${APPLICATION_API_END_POINT}/${jobId}/applicants`,{withCredentials:true});
-                console.log(res);
+               
                 
                 if(res.data.success){
                     dispatch(setApplicants(res.data.job));

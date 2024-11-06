@@ -34,7 +34,7 @@ const registerCompany = async()=>{
            toast.success(res.data.message);
            const companyId = res?.data?.company?._id;
            navigate(`/admin/companies/${companyId}`);
-           console.log(res?.data);
+         
            
         }
 

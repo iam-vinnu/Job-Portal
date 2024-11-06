@@ -12,7 +12,7 @@ const Applicants = () => {
     const params = useParams();
     useGetApplicants(params.id);
     const {applicants} = useSelector(store => store.application);
-    console.log(applicants);
+   
     
   return (
     <div>
